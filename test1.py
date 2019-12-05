@@ -24,6 +24,7 @@ def index():
 	attempts = 0
 	x = random.randint(1,len(words))
 	word = words[x].strip('\n')
+	word = word.lower()
 	return render_template('index.html')
 
 	
@@ -34,7 +35,7 @@ def mainGame(positions):
 	global tick
 	global attempts
 	positions = position
-	print("ddddddddddddddddddddddddddddddddddd",word)
+	print("[HELP]:      ----------------------",word)
 	print("tick",tick)
 	if(tick == 0):
 		position = list([""]*len(word))
@@ -49,6 +50,7 @@ def mainGame(positions):
 @app.route('/mainGame/checkLetter',methods=['POST'])
 def checkLetter():
 	choice = request.form['userLetter'];
+	choice = choice.lower()
 	global position
 	global word
 	global tick
