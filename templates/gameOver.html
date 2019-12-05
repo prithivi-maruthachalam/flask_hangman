@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<style>
+			body{
+				text-align: center;
+				height: 100%;
+			}
+			#lose{
+			display: inline-block;
+			width: 50%;
+			border: none;
+			margin: 7% 0 0 0;
+			height: 50%;
+			border-radius: 15px;
+			font-size: 200px;
+			font-family: "Arial";
+			border:5px solid red;
+			color: red;
+			}
+			#win{
+			display: inline-block;
+			width: 50%;
+			border: none;
+			margin: 7% 0 0 0;
+			height: 50%;
+			border-radius: 15px;
+			font-size: 200px;
+			font-family: "Arial";
+			border:5px solid green;
+			color: green;
+			}
+			#start{
+			margin:  12% 0 0 0;
+			}
+			#again{
+			border: 3px solid cyan;
+			outline: none;
+			height:50px;
+			background-color: white;
+			width: 150px;
+			border-radius: 7px;
+			margin:  2% 0 0 0;
+			font-size: 20px;
+			color: cyan;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<form action="/">
+		<div id="{{identity}}">
+				<div id="start">
+					<font id="loss">{{text}}</font>
+				</div>
+		</div> 
+		<br>
+		<input type="submit" value="Play again?" id="again" name="again">
+		</form>
+	</body>
+</html>

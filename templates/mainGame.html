@@ -1,0 +1,103 @@
+
+<head>
+	<title>untitled</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	
+	<style>
+		body{
+			text-align: center;
+		}
+		#container{
+		display: inline-block;
+		width: 100%;
+		}
+		.letterInput{
+			display: inline-block;
+			float: middle;
+			margin: 15% 0 0 3%;
+			background-color: cyan;
+			height: 50px;
+			width: 50px;
+			font-size: 50px;
+		}
+		#info{
+		
+		height: 50px;
+		width: 250px;
+		
+		margin: 4% 0 0 0;
+		}
+		#left{
+		float: left;
+		height: 43px;
+		width: 150px;
+		border: 3px solid cyan;
+		border-radius: 10px;
+		font-size: 30px;
+		font-family: "Arial";
+		padding-top: 8px;
+		}
+		#lefte{
+		color: cyan;
+		}
+		#right{
+		float: right;
+		height: 43px;
+		width: 80px;
+		border: 3px solid cyan;
+		border-radius: 10px;
+		font-size: 30px;
+		font-family: "Arial";
+		padding-top: 7px;
+		}
+		
+		#userInput{
+		border: none;
+		border-bottom: 3px solid cyan;
+		height: 50px;
+		width: 50px;
+		font-size: 50px;
+		padding-left: 20px;
+		outline: none;
+		}
+		
+	</style>
+</head>
+
+<body onload="firstFunction()">
+		<div id="container">
+			<center>
+				{% for i in range(0,length) %}
+					<div class="letterInput" id="{{ wordToGuess[i] }}">
+						{{pos[i]}}
+					</div>
+				{% endfor %}
+			</center>
+		</div>
+		
+		<center>
+		<div id="info">
+			<div id="left">
+				<font id="lefte">Tries left</font>
+			</div>
+			<div id="right">
+				{{tries}}
+			</div>
+		</div>
+		</center>
+		<br>
+		<center>
+		<div id="inputDiv">
+			<form action="checkLetter" method="post">
+				<input maxlength="1" autocomplete="off" id="userInput" name="userLetter" required>
+			</form>
+		</div> 
+		</center>
+</body>
+<script>
+	function firstFunction(){
+	var inp = document.getElementById("userInput");
+	inp.focus();
+	}
+</script>
+</html>
